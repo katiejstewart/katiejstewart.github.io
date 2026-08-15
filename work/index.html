@@ -20,6 +20,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<script>
+/* Applies the saved theme before first paint, and marks JS as available so the
+   reveal styles only ever engage when something can un-hide them. */
+(function(){var r=document.documentElement;r.className+=" js";try{if(localStorage.getItem("theme")==="dark")r.setAttribute("data-theme","dark");}catch(e){}})();
+</script>
 <link rel="stylesheet" href="/assets/site.css">
 </head>
 <body class="work">
@@ -31,25 +36,29 @@
       <span class="current" aria-current="page">Work</span>
       <a href="/about/">About</a>
       <a href="https://www.linkedin.com/in/katiejacquelinestewart/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.8v3.1M12 19.1v3.1M4.4 4.4l2.2 2.2M17.4 17.4l2.2 2.2M1.8 12h3.1M19.1 12h3.1M4.4 19.6l2.2-2.2M17.4 6.6l2.2-2.2"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M20.2 14.7A8.6 8.6 0 1 1 9.3 3.8a6.9 6.9 0 0 0 10.9 10.9Z"/></svg>
+      </button>
     </nav>
   </header>
 
-  <section class="work-intro">
+  <section class="work-intro" data-reveal>
     <span class="eyebrow">01 · Work</span>
     <h1>Problem, built, outcome</h1>
     <p>Three places where the work was real. A bank, a company I founded, and a lab teaching models to read financial filings. In each one I found the inefficiency first, then built the thing that removed it.</p>
   </section>
 
   <section class="stat-row">
-    <span class="stat"><strong>50+</strong><span>analysts and VPs using systems I built and shipped</span></span>
-    <span class="stat"><strong>~70%</strong><span>of the manual work gone from parts of our diligence and reporting</span></span>
-    <span class="stat"><strong>20</strong><span>live transactions led to closing</span></span>
-    <span class="stat"><strong>100+</strong><span>customers at a company I started and ran</span></span>
+    <span class="stat" data-reveal data-reveal-delay="0"><strong>50+</strong><span>analysts and VPs using systems I built and shipped</span></span>
+    <span class="stat" data-reveal data-reveal-delay="90"><strong>~70%</strong><span>of the manual work gone from parts of our diligence and reporting</span></span>
+    <span class="stat" data-reveal data-reveal-delay="180"><strong>20</strong><span>live transactions led to closing</span></span>
+    <span class="stat" data-reveal data-reveal-delay="270"><strong>100+</strong><span>customers at a company I started and ran</span></span>
   </section>
 
   <section class="roles">
 
-    <article class="role">
+    <article class="role" data-reveal>
       <div class="role-rail">
         <span class="role-index">01</span>
         <h2>Technology &amp; Disruptive Commerce Credit Analyst</h2>
@@ -73,7 +82,7 @@
       </div>
     </article>
 
-    <article class="role">
+    <article class="role" data-reveal>
       <div class="role-rail">
         <span class="role-index">02</span>
         <h2>Founder &amp; CEO</h2>
@@ -97,7 +106,7 @@
       </div>
     </article>
 
-    <article class="role">
+    <article class="role" data-reveal>
       <div class="role-rail">
         <span class="role-index">03</span>
         <h2>Finance Domain Expert, AI Training Data</h2>
@@ -122,7 +131,7 @@
 
   </section>
 
-  <section class="build-intro">
+  <section class="build-intro" data-reveal>
     <span class="eyebrow">02 · Build</span>
     <h2>Outside the job description</h2>
     <p>Things I built for myself, mostly to find out whether they would work.</p>
@@ -131,7 +140,7 @@
   <section class="build-section">
     <div class="hairline-grid build-cards">
 
-      <div class="build-card">
+      <div class="build-card" data-reveal data-reveal-delay="0">
         <div class="build-card-head"><span>SYS / A</span><span class="status">In use daily</span></div>
         <h3>AI Credit Analyst</h3>
         <p>An agent that can work through much of a deal process autonomously with limited human supervision, from pulling filings to drafting the commentary a human then edits.</p>
@@ -141,7 +150,7 @@
         </div>
       </div>
 
-      <div class="build-card">
+      <div class="build-card" data-reveal data-reveal-delay="110">
         <div class="build-card-head"><span>SYS / B</span><span class="status">5 hrs/wk back</span></div>
         <h3>Market Intelligence Engine</h3>
         <p>A briefing system that watches industry news, keeps what matters, and sends me a personalized brief every morning.</p>
@@ -152,7 +161,7 @@
         </div>
       </div>
 
-      <div class="build-card">
+      <div class="build-card" data-reveal data-reveal-delay="220">
         <div class="build-card-head"><span>SYS / C</span><span class="status">Shipped</span></div>
         <h3>WeClean Platform</h3>
         <p>A full stack web platform where customers book services and message cleaning staff directly, built to run the company I founded.</p>
@@ -174,5 +183,6 @@
   </footer>
 
 </div>
+<script src="/assets/site.js" defer></script>
 </body>
 </html>
