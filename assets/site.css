@@ -569,6 +569,24 @@ a:focus-visible {
   gap: 8px;
 }
 
+/* Live-project link at the foot of a build card. */
+.build-visit {
+  margin-top: 14px;
+  align-self: flex-start;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rose);
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+}
+
+.build-visit:hover {
+  color: var(--rose-hover);
+  border-bottom-color: var(--rose-hover);
+}
+
 .tag {
   padding: 5px 10px;
   border: var(--pill-border);
