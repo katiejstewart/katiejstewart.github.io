@@ -21,6 +21,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<script>
+/* Applies the saved theme before first paint, and marks JS as available so the
+   reveal styles only ever engage when something can un-hide them. */
+(function(){var r=document.documentElement;r.className+=" js";try{if(localStorage.getItem("theme")==="dark")r.setAttribute("data-theme","dark");}catch(e){}})();
+</script>
 <link rel="stylesheet" href="/assets/site.css">
 </head>
 <body class="about">
@@ -32,11 +37,15 @@
       <a href="/work/">Work</a>
       <span class="current" aria-current="page">About</span>
       <a href="/Katie-Stewart-Resume.pdf" target="_blank" rel="noopener" download="Katie-Stewart-Resume.pdf">Resume</a>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.8v3.1M12 19.1v3.1M4.4 4.4l2.2 2.2M17.4 17.4l2.2 2.2M1.8 12h3.1M19.1 12h3.1M4.4 19.6l2.2-2.2M17.4 6.6l2.2-2.2"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M20.2 14.7A8.6 8.6 0 1 1 9.3 3.8a6.9 6.9 0 0 0 10.9 10.9Z"/></svg>
+      </button>
     </nav>
   </header>
 
   <section class="bio">
-    <div class="bio-copy">
+    <div class="bio-copy" data-reveal>
       <span class="eyebrow">01 — About</span>
       <h1>Most of what I have built started as a problem in my own day.</h1>
       <p>I am a credit analyst at JPMorgan. Alongside the deal work, I kept building tools for the parts of the process that ate the most hours, and then sat with the people who had to use them until using them became normal.</p>
@@ -44,7 +53,7 @@
       <p>Before JPMorgan I started WeClean in St. Louis and grew it to 100+ customers with a five-person team. I did the hiring, the pricing, the scheduling, and a fair number of the cleans.</p>
       <p>In my free time I golf, wakeboard, play squash, and travel about as far south as the map goes.</p>
     </div>
-    <figure class="bio-figure">
+    <figure class="bio-figure" data-reveal data-reveal-delay="120">
       <div class="bio-frame">
         <img src="/images/katie-portrait.jpg" alt="Katie in a white dress holding her diploma under a stone archway at Washington University" width="724" height="1086">
       </div>
@@ -52,7 +61,7 @@
     </figure>
   </section>
 
-  <section class="facts-section">
+  <section class="facts-section" data-reveal>
     <div class="hairline-grid facts">
       <div class="fact">
         <span class="meta">Based</span>
@@ -73,7 +82,7 @@
     </div>
   </section>
 
-  <section class="toolkit">
+  <section class="toolkit" data-reveal>
     <span class="eyebrow">02 — Toolkit</span>
     <div class="toolkit-pills">
       <span>Claude</span>
@@ -93,7 +102,7 @@
   </section>
 
   <section class="contact">
-    <div class="contact-copy">
+    <div class="contact-copy" data-reveal>
       <span class="eyebrow">03 — Contact</span>
       <h2>Say hello.</h2>
       <p>If you want to talk about integrating AI into your life and workflows, happy to connect. No pitch. These are just my favorite conversations to have.</p>
@@ -103,7 +112,7 @@
         <a class="contact-row" href="/Katie-Stewart-Resume.pdf" target="_blank" rel="noopener" download="Katie-Stewart-Resume.pdf"><span class="label">Resume</span><span>Download PDF ↗</span></a>
       </div>
     </div>
-    <div class="booking">
+    <div class="booking" data-reveal data-reveal-delay="120">
       <span class="booking-label">Or book time directly</span>
       <div class="booking-frame">
         <iframe src="https://calendly.com/katiejstewart?hide_gdpr_banner=1&amp;background_color=fbf7f4&amp;text_color=2a1218&amp;primary_color=d64c74" title="Book time with Katie Stewart"></iframe>
@@ -120,5 +129,6 @@
   </footer>
 
 </div>
+<script src="/assets/site.js" defer></script>
 </body>
 </html>
