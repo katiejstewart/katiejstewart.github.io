@@ -21,6 +21,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<script>
+/* Applies the saved theme before first paint, and marks JS as available so the
+   reveal styles only ever engage when something can un-hide them. */
+(function(){var r=document.documentElement;r.className+=" js";try{if(localStorage.getItem("theme")==="dark")r.setAttribute("data-theme","dark");}catch(e){}})();
+</script>
 <link rel="stylesheet" href="/assets/site.css">
 </head>
 <body class="home">
@@ -28,21 +33,27 @@
 
   <header class="home-header">
     <span class="wordmark">Katie Stewart</span>
+    <div class="header-right">
     <a class="email-link" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=katiejstewart02@gmail.com&amp;su=Hi%20Katie&amp;body=Hi%20Katie%2C%0A%0AI%20came%20across%20your%20site.%20I%27m%20____%20at%20____%2C%20and%20we%27re%20trying%20to%20figure%20out%20____.%0A%0AWould%20you%20be%20open%20to%20a%20short%20call%3F%0A%0AThanks%2C%0A____" target="_blank" rel="noopener">katiejstewart02@gmail.com ↗</a>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.8v3.1M12 19.1v3.1M4.4 4.4l2.2 2.2M17.4 17.4l2.2 2.2M1.8 12h3.1M19.1 12h3.1M4.4 19.6l2.2-2.2M17.4 6.6l2.2-2.2"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M20.2 14.7A8.6 8.6 0 1 1 9.3 3.8a6.9 6.9 0 0 0 10.9 10.9Z"/></svg>
+      </button>
+    </div>
   </header>
 
   <main class="home-main">
 
     <section class="home-copy">
-      <span class="eyebrow">AI Operator · Miami</span>
+      <span class="eyebrow" data-reveal>AI Operator · Miami</span>
 
-      <h1 class="home-name">Katie<br>Stewart</h1>
+      <h1 class="home-name" data-reveal data-reveal-delay="70">Katie<br>Stewart</h1>
 
-      <p class="home-tagline">I put AI inside the work people already do, then get them to keep using it.</p>
+      <p class="home-tagline" data-reveal data-reveal-delay="140">I put AI inside the work people already do, then get them to keep using it.</p>
 
-      <p class="home-body">Credit analyst at JPMorgan, where the AI workflows I built are now used by 50+ analysts and VPs. Before that I founded WeClean and grew it to 100+ customers. Both taught me the same thing: the build takes a week, and getting people to change how they work on Monday is the actual job.</p>
+      <p class="home-body" data-reveal data-reveal-delay="210">Credit analyst at JPMorgan, where the AI workflows I built are now used by 50+ analysts and VPs. Before that I founded WeClean and grew it to 100+ customers. Both taught me the same thing: the build takes a week, and getting people to change how they work on Monday is the actual job.</p>
 
-      <div class="button-row">
+      <div class="button-row" data-reveal data-reveal-delay="280">
         <a class="btn btn-filled" href="/work/">Work →</a>
         <a class="btn btn-outline" href="https://calendly.com/katiejstewart" target="_blank" rel="noopener">Schedule time ↗</a>
         <a class="btn btn-outline" href="https://www.linkedin.com/in/katiejacquelinestewart/" target="_blank" rel="noopener">LinkedIn ↗</a>
@@ -50,7 +61,7 @@
       </div>
     </section>
 
-    <figure class="home-figure">
+    <figure class="home-figure" data-reveal data-reveal-delay="140">
       <img src="/images/katie-patagonia.jpg" alt="Katie beside a glacial lake in Tierra del Fuego, arms raised, mountains behind her" width="768" height="1024">
       <figcaption>Fig. 1 · Tierra del Fuego, off the clock</figcaption>
     </figure>
@@ -62,5 +73,6 @@
   </footer>
 
 </div>
+<script src="/assets/site.js" defer></script>
 </body>
 </html>
